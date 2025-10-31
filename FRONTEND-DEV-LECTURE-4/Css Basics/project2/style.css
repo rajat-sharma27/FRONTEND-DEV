@@ -1,0 +1,15 @@
+/* Multi-section informational page */
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial;background:#fff;color:#111}
+header{padding:1rem;text-align:center;background:#0b3d91;color:white}
+.topnav{display:flex;gap:1rem;justify-content:center;padding:0.5rem;background:#f0f0f0}
+.topnav a{text-decoration:none;color:#0b3d91}
+main section{min-height:60vh;display:flex;flex-direction:column;justify-content:center;padding:3rem;color:white}
+/* Full-width backgrounds and gradients */
+.history{background-image:linear-gradient(90deg,#4b79a1,#283e51);background-attachment:fixed}
+.culture{background-image:radial-gradient(circle at 20% 20%, #ff9a9e, #fad0c4);color:#111;background-attachment:fixed}
+.visit{background-image:url('https://via.placeholder.com/1200x600');background-size:cover;background-position:center}
+/* Spacing and typography */
+main h2{font-size:2rem;margin:0 0 1rem 0;font-weight:700}
+main p{max-width:60ch;margin:0}
+footer{padding:1rem;text-align:center;background:#fafafa;border-top:1px solid #eee}

@@ -1,0 +1,13 @@
+
+*{box-sizing:border-box} body{margin:0;padding:20px;font-family:system-ui;background:#fbfdff}
+.blog{display:grid; grid-template-columns:240px 1fr; grid-template-areas: "header header" "sidebar posts" "footer footer"; gap:16px; align-items:start}
+.site-header{grid-area:header;background:#fff;padding:12px;border-radius:8px}
+.sidebar{grid-area:sidebar;background:#fff;padding:12px;border-radius:8px}
+.posts{grid-area:posts; display:grid; grid-template-columns:1fr 1fr; gap:12px}
+.post{background:#fff;padding:12px;border-radius:8px; min-height:120px}
+
+/* Sidebar moves below main content below 800px */
+@media (max-width:800px){
+  .blog{grid-template-columns:1fr; grid-template-areas:"header" "posts" "sidebar" "footer"}
+  .posts{grid-template-columns:1fr}
+}

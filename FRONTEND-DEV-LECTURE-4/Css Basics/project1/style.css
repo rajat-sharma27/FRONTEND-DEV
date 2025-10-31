@@ -1,0 +1,26 @@
+/* Personal portfolio style */
+:root{
+  --bg:#f5f8ff;
+  --accent:#1f6feb;
+  --text:#0b1220;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,Arial;background:var(--bg);color:var(--text);}
+/* Fixed header stays at top */
+.site-header{
+  position:fixed;
+  top:0;left:0;right:0;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:0.8rem 1rem;background:rgba(255,255,255,0.95);backdrop-filter:blur(4px);
+  border-bottom:1px solid rgba(0,0,0,0.05);z-index:10;
+}
+.site-header .brand{font-weight:700;font-size:1.1rem;}
+.site-header .nav a{margin-left:1rem;text-decoration:none;color:var(--accent)}
+.main{padding-top:72px;min-height:calc(100vh - 72px);display:flex;align-items:center;justify-content:center}
+.hero{display:flex;gap:2rem;align-items:center;padding:4vh 4vw;}
+.profile{width:160px;height:160px;border-radius:50%;object-fit:cover;border:6px solid rgba(31,111,235,0.12)}
+.bio h1{font-size:2rem;margin:0 0 0.5rem 0}
+/* Example of using different CSS units: px, em, %, vh, rem */
+.bio p{font-size:1rem /* rem */, max-width:40ch;}
+.site-footer{display:flex;align-items:center;justify-content:center;height:60px;background:#eaf1ff;position:sticky;bottom:0}
+/* Footer sticks to bottom visually; using flex ensures it stays visible */

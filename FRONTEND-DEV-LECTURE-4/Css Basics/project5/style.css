@@ -1,0 +1,9 @@
+/* Pricing table */
+body{font-family:Arial;margin:2rem;background:#f4f6f8}
+.pricing{display:flex;gap:1rem;align-items:stretch}
+.plan{flex:1;padding:1.2rem;border-radius:10px;background:white;display:flex;flex-direction:column;justify-content:space-between;transition:transform .25s,background .25s}
+.plan:hover{transform:scale(1.03)}
+.btn{display:inline-block;padding:.6rem 1rem;text-decoration:none;border-radius:6px;background:#0b74de;color:white;margin-top:1rem}
+.popular{border:2px solid #ffb703;background:#fff8e6}
+/* Ensure equal heights by using align-items and flex */
+@media (max-width:800px){.pricing{flex-direction:column}}

@@ -1,0 +1,16 @@
+/* Box Model & positioning demo */
+body{margin:0;font-family:Arial;background:#f6fafb}
+.topnav{position:sticky;top:0;background:rgba(11,61,145,0.95);color:white;padding:1rem;z-index:10}
+.hero{height:40vh;background-image:url('https://via.placeholder.com/1600x600');background-size:cover;display:flex;align-items:center;justify-content:center;position:relative}
+.hero-text{background:rgba(0,0,0,0.45);color:white;padding:2rem;border-radius:8px;text-align:center}
+.about{display:flex;gap:1rem;padding:2rem;align-items:center}
+.about .text{flex:1;padding:1rem} .about .img{flex:1}
+.services{display:flex;gap:1rem;padding:1rem}
+.service{flex:1;padding:1.2rem;background:white;border:1px solid rgba(0,0,0,0.06);box-shadow:0 6px 18px rgba(2,6,23,0.06);text-align:center}
+.contact{padding:2rem}
+.contact form{display:flex;gap:1rem}
+.contact input{flex:1;padding:.6rem;border:1px solid #dfe8f5;border-radius:6px}
+.foot{padding:1rem;text-align:center;background:#eef4ff;margin-top:2rem}
+/* examples of outline, rgba and absolute positioning */
+.service:first-child{position:relative}
+.service:first-child::after{content:'';position:absolute;right:10px;top:10px;width:12px;height:12px;background:rgba(255,0,0,0.6);border-radius:50%}

@@ -1,0 +1,17 @@
+
+*{box-sizing:border-box} body{font-family:system-ui; margin:0; padding:20px; background:#f7fafc}
+.gallery-wrap h1{text-align:center}
+.grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:18px}
+.card{background:#fff; padding:18px; border-radius:10px; box-shadow:0 1px 6px rgba(0,0,0,0.06); display:flex; flex-direction:column; justify-content:space-between; min-height:140px; transition:transform .3s; transform-origin:center;}
+
+/* Ensure equal height by making all cards flex columns with min-height */
+.card h2{margin:0 0 8px 0; font-size:18px}
+.card .price{margin:0; font-weight:700}
+
+/* Hover effect */
+.card:hover{transform:scale(1.05)}
+
+/* Tablets: 2 columns */
+@media (max-width:1000px){ .grid{grid-template-columns:repeat(2,1fr)} }
+/* Mobile: 1 column */
+@media (max-width:600px){ .grid{grid-template-columns:repeat(1,1fr)} }
