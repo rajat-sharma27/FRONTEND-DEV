@@ -1,0 +1,18 @@
+
+/* q1.css - Pseudo-classes demo */
+/* Use Flexbox to align examples in a single row on wide screens */
+body{font-family: Arial, sans-serif;margin:0;padding:24px;box-sizing:border-box}
+header,h1{margin:0 0 16px 0}
+.container{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start}
+.example{flex:1 1 220px;border:1px solid #e0e0e0;padding:12px;border-radius:8px;min-width:220px}
+a{display:inline-block;padding:6px 8px;border-radius:4px;text-decoration:none}
+a:hover{background:#222;color:#fff} /* :hover shows background change */
+button{padding:8px 12px;border-radius:6px;border:1px solid #666;background:#fafafa;cursor:pointer}
+button:focus{outline:3px solid rgba(0,120,215,0.25)} /* :focus visible */
+button:active{transform:translateY(1px);opacity:0.9} /* :active pressed look */
+.active-demo{transition:all .12s ease-in-out}
+.nth-list li{padding:6px;border-radius:4px}
+.nth-list li:nth-child(odd){background:#f3f3f3} /* nth-child selector */
+@media (max-width:700px){
+  .container{flex-direction:column}
+}

@@ -1,0 +1,9 @@
+
+/* q2.css - pure CSS tooltips */
+*{box-sizing:border-box;font-family:Arial, sans-serif}
+.center{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px}
+.icons{display:flex;gap:20px}
+.has-tooltip{position:relative;cursor:default;padding:8px;border-radius:6px;border:1px solid #ddd}
+.tooltip{position:absolute;left:50%;transform:translateX(-50%) translateY(8px);bottom:100%;white-space:nowrap;padding:8px;border-radius:6px;background:#222;color:#fff;opacity:0;pointer-events:none;transition:opacity .3s ease-in-out, transform .3s ease-in-out;font-size:13px}
+.has-tooltip:hover .tooltip,.has-tooltip:focus .tooltip{opacity:1;transform:translateX(-50%) translateY(0)} /* fade-in and slight move */
+@media (max-width:500px){.icons{flex-direction:column;align-items:center}}

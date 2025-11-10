@@ -1,0 +1,16 @@
+
+/* q4.css - Demonstrate selector types */
+/* element selector */
+p{line-height:1.5}
+/* ID selector */
+#intro{font-weight:bold;}
+/* class selector */
+.note{background:#f9f9d9;padding:8px;border-radius:6px}
+/* attribute selector */
+p[data-role="special"]{border-left:4px solid #4caf50;padding:8px}
+/* child combinator */
+.parent > .child{padding:6px;background:#eef}
+/* adjacent sibling */
+h3 + p{font-style:italic}
+/* general sibling */
+h3 ~ p{color:#555}

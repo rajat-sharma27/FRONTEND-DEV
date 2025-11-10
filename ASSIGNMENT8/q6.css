@@ -1,0 +1,14 @@
+
+/* q6.css - animation examples */
+body{font-family:Arial;margin:20px}
+.center{display:flex;flex-direction:column;align-items:center;gap:18px}
+.animations{display:flex;gap:18px;align-items:center}
+.box{padding:12px;border-radius:8px;background:#f3f4f6}
+@keyframes slide {0%{transform:translateX(0)}50%{transform:translateX(20px)}100%{transform:translateX(0)}}
+.moving{animation:slide 2s ease-in-out infinite;animation-iteration-count:infinite;animation-direction:alternate}
+.ball{width:36px;height:36px;border-radius:50%;background:#ef4444}
+@keyframes bounce {0%{transform:translateY(0)}50%{transform:translateY(-24px)}100%{transform:translateY(0)}}
+.bounce{animation:bounce 1s ease-in-out infinite}
+.text{padding:8px;border-radius:6px}
+@keyframes colorcycle{0%{background:#fde68a}50%{background:#bbf7d0}100%{background:#fde68a}}
+.colorchange{animation:colorcycle 3s ease-in-out infinite;animation-direction:alternate;animation-delay:.5s}

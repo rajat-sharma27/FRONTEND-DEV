@@ -1,0 +1,9 @@
+
+/* q9.css - pseudo-classes + transitions + transforms */
+body{font-family:Arial;margin:20px}
+.examples{display:flex;gap:12px}
+.combo{padding:10px 14px;border-radius:10px;border:none;transition:transform .18s ease,background .18s ease,box-shadow .18s ease;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,0.08)}
+.combo:hover{transform:scale(1.06);box-shadow:0 12px 28px rgba(0,0,0,0.12)} /* grow + shadow */
+.combo:active{transform:scale(0.98)}
+.combo.soft{background:#eef9ff}
+.combo.strong{background:#2563eb;color:#fff}
