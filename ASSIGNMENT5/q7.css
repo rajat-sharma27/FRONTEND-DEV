@@ -1,0 +1,6 @@
+body{height:100vh;margin:0;font-family:Arial;background:#f3f6fb;display:flex;align-items:center;justify-content:center}
+.contact-form{background:#fff;padding:1.5rem;border-radius:10px;box-shadow:0 12px 30px rgba(0,0,0,0.08);width:100%;max-width:480px}
+.contact-form label{display:block;margin-bottom:0.75rem}
+.contact-form input,.contact-form textarea{width:100%;padding:0.6rem;border:1px solid #cbd5e1;border-radius:6px}
+.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:#0b63c6;box-shadow:0 0 0 3px rgba(11,99,198,0.12)}
+.contact-form button{margin-top:0.5rem;padding:0.6rem 1rem;border:none;background:#0b63c6;color:#fff;border-radius:6px}

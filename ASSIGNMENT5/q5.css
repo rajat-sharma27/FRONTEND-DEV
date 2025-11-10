@@ -1,0 +1,13 @@
+body{font-family:Arial,sans-serif;background:#f5f7fb;margin:0;padding:2rem}
+.pricing{display:flex;gap:1rem;max-width:1100px;margin:0 auto}
+.plan{flex:1;background:#fff;padding:1.5rem;border:1px solid #e2e8f0;border-radius:12px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .25s ease,background-color .25s}
+.plan:hover{transform:scale(1.03)}
+.plan h2{margin:0 0 0.5rem 0}
+.price{font-size:1.5rem;font-weight:700;margin-top:1rem}
+.btn{display:inline-block;margin-top:1rem;padding:0.6rem 1rem;text-decoration:none;border-radius:8px;background:#0b63c6;color:#fff}
+
+/* Most popular highlight */
+.plan.popular{border:2px solid #ffb020;background:#fffdf6}
+
+/* Keep heights equal */
+@media (max-width:800px){.pricing{flex-direction:column}}

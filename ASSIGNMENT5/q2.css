@@ -1,0 +1,24 @@
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Georgia,serif;line-height:1.6;background:#fff;color:#222}
+header{padding:1rem;background:#072c4a;color:#fff;display:flex;justify-content:space-between;align-items:center}
+header nav a{color:#fff;margin-left:1rem;text-decoration:none}
+
+.section{min-height:70vh;display:flex;align-items:center}
+.inner{max-width:1100px;margin:0 auto;padding:3rem}
+
+/* Full-width backgrounds */
+.fixed-bg{background-image:url('city1.jpg');background-size:cover;background-attachment:fixed;color:#fff}
+.fixed-bg-2{background-image:url('city2.jpg');background-size:cover;background-attachment:fixed;color:#fff}
+
+/* Linear gradient section */
+.gradient-linear{background:linear-gradient(90deg, rgba(255,200,100,0.9), rgba(255,100,120,0.9));color:#111}
+
+/* Radial gradient */
+.gradient-radial{background:radial-gradient(circle at 20% 20%, rgba(255,255,150,0.9), rgba(200,120,200,0.85));}
+
+h2{font-size:2rem;font-weight:700;margin-bottom:0.5rem}
+
+/* Spacing */
+.section p{margin-top:1rem;padding:0.25rem;border:1px solid rgba(0,0,0,0.05);background:rgba(255,255,255,0.6)}
+
+footer{padding:1rem;text-align:center;background:#f1f1f1}
