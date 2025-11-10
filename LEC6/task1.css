@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  text-align: center;
+  width: 90%;
+  max-width: 900px;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card1, .card2, .card3 {
+  background: linear-gradient(#0a0808, #333);
+  color: #fff;
+  border-radius: 20px;
+  padding: 30px 20px;
+  width: 250px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card1:hover, .card2:hover, .card3:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card1 img, .card2 img, .card3 img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.card1 h2, .card2 h2, .card3 h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #ffeb3b;
+}
+
+.card1 p, .card2 p, .card3 p {
+  font-size: 0.65rem;
+  color: #ddd;
+  line-height: 1.5;
+}
+
+.card1:hover{
+  background: linear-gradient(lightblue, #333);
+}
+
+.card2:hover{
+  background: linear-gradient(purple, #333);
+}
+
+.card3:hover{
+  background: linear-gradient(gold, #333);
+}

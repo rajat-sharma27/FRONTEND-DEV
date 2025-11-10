@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fafafa;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 15px 60px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+.logo {
+  font-size: 28px;
+  color: #000000;
+  font-weight: bold;
+  font-style: oblique;
+  font-weight:900;
+}
+
+.search-box {
+  display: flex;
+  flex: 1;
+  margin: 0 40px;
+  gap: 10px;
+}
+
+.search-box input {
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  flex: 1;
+}
+
+.location {
+  flex: 0.9;
+}
+
+.search {
+  flex: 0.8;
+}
+
+.login-links a {
+  text-decoration: none;
+  color: #555;
+  margin-left: 15px;
+  font-weight: 500;
+}
+
+/* Tabs Section */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 25px 0;
+  background-color: white;
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #777;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tab.active {
+  color: #e23744;
+  border-bottom: 2px solid #e23744;
+}
+
+.tab-icon {
+  font-size: 28px;
+  background-color: #f9f9f9;
+  border-radius: 50%;
+  padding: 15px;
+  margin-bottom: 8px;
+}
+

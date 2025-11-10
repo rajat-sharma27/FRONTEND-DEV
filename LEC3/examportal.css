@@ -1,0 +1,79 @@
+table {
+  border: 2px solid black;
+  border-collapse: collapse;
+  width: 1000px;
+  margin: 30px auto;
+  font-family: Arial, sans-serif;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  vertical-align: top;
+}
+
+/* Header */
+.header {
+  font-size: 30px;
+  text-align: center;
+  padding: 40px;
+  background-color: #06608d;
+  color: #f2f2f2;
+}
+
+/* Navigation bar */
+.nav {
+  text-align: center;
+  background-color: #59b8e8;
+  font-weight: bold;
+  padding: 10px;
+  color: #f9f9f9;
+  cursor: pointer;
+}
+
+/* Welcome text row */
+.welcome {
+  text-align: center;
+  background-color: #05415f;
+  font-style: italic;
+  padding: 12px;
+  color: #f2f2f2;
+}
+
+/* Main content (left column) */
+.main-content {
+  width: 70%;
+  padding: 16px;height: 400px;
+  font-size:x-large;
+}
+
+/* Sidebar (right column) */
+.sidebar {
+  width: 30%;
+  background-color: #f9f9f9;
+  padding: 16px;
+  text-align: center;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #06608d;
+  font-size: 14px;
+}
+.underline {
+  border-bottom: 3px solid rgb(0, 0, 0);
+  padding-bottom: 20px;
+}
+.name{
+  display: block;
+  text-align: center;
+
+}
+.role{
+  display: block;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 2px;
+}
