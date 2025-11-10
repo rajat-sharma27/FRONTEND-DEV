@@ -1,8 +1,0 @@
-
-*{box-sizing:border-box} body{margin:0;height:100vh;display:flex;align-items:center;justify-content:center;background:#f7fafc;font-family:system-ui}
-.wrap{perspective:1000px}
-.card{width:300px;height:200px; position:relative; transform-style:preserve-3d; transition:transform .7s}
-.card .face{position:absolute; inset:0; backface-visibility:hidden; display:flex; flex-direction:column; align-items:center; justify-content:center; border-radius:10px; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.08)}
-.card .back{transform:rotateY(180deg); padding:16px}
-.wrap:hover .card{transform:rotateY(180deg)}
-.front .img{width:80%;height:90px;background:linear-gradient(90deg,#a8d0ff,#6ca0ff);border-radius:8px;display:flex;align-items:center;justify-content:center}
