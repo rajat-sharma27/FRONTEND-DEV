@@ -1,0 +1,25 @@
+/* responsive-image-filter-gallery.css */
+/* Grid with auto-fit */
+:root{--gap:16px}
+*{box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;margin:16px;color:#111}
+.gallery-wrap{max-width:1100px;margin:0 auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--gap)}
+figure{position:relative;overflow:hidden;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.08);margin:0;background:#fff}
+figure img{width:100%;height:auto;display:block;transition:filter .4s ease,transform .4s ease}
+figure figcaption{padding:10px;text-align:center;background:#fff}
+/* apply different filters via nth-child */
+.grid figure:nth-child(1) img{filter:blur(3px)}
+.grid figure:nth-child(2) img{filter:grayscale(100%)}
+.grid figure:nth-child(3) img{filter:sepia(80%)}
+.grid figure:nth-child(4) img{filter:brightness(0.6)}
+.grid figure:nth-child(5) img{filter:contrast(1.4)}
+.grid figure:nth-child(6) img{filter:hue-rotate(90deg)}
+
+/* remove filter on hover */
+figure:hover img, figure:focus-within img{filter:none;transform:scale(1.03)}
+
+/* responsive stack under 600px */
+@media (max-width:600px){
+  .grid{grid-template-columns:1fr}
+}

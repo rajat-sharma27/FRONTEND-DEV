@@ -1,0 +1,16 @@
+/* responsive-web-design-layout.css */
+*{box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+body{margin:0;color:#111}
+.site-header{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.05)}
+.logo{font-weight:700;font-size:1.2rem}
+.nav a{margin-left:14px;text-decoration:none;color:#333;padding:6px 8px;border-radius:6px}
+.features{display:flex;gap:16px;padding:24px;max-width:1100px;margin:0 auto}
+.feature{flex:1;padding:20px;border-radius:8px;background:#f7f9fc;text-align:center;transition:transform .2s ease,box-shadow .2s ease}
+.feature:hover{transform:scale(1.04);box-shadow:0 10px 30px rgba(0,0,0,0.08)}
+
+/* stack vertically below 750px */
+@media (max-width:750px){
+  .features{flex-direction:column;padding:12px}
+  .nav{display:none} /* hide nav for simplicity */
+}
+.site-footer{text-align:center;padding:16px;background:#fff;margin-top:16px}

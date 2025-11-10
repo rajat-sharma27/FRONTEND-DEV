@@ -1,0 +1,12 @@
+/* responsive-typography.css */
+*{box-sizing:border-box}
+body{font-family:Georgia,serif;margin:24px;color:#111}
+.typography{max-width:900px;margin:0 auto;text-align:center;padding:40px}
+h1{font-size:clamp(1.5rem,4vw,3rem);margin:0 0 16px}
+p{font-size:clamp(1rem,2vw,1.5rem);line-height:1.6;margin:0 auto;max-width:70ch}
+
+/* adjust spacing below 700px */
+@media (max-width:700px){
+  .typography{padding:24px}
+  p{line-height:1.4}
+}
