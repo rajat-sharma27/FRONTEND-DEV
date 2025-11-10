@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<!-- Question 4: Use <frameset> and <frame> tags to create a top navigation frame
+     and a bottom frame that displays a welcome message.
+     Note: <frameset> is deprecated in HTML5 but used here because the question requests it.
+-->
+<html>
+<head>
+    <title>Q4 - Frameset Layout</title>
+</head>
+<frameset rows="100,*">
+    <frame src="q4_top.html" name="navFrame" title="Navigation Frame">
+    <frame src="q4_bottom.html" name="contentFrame" title="Content Frame">
+    <noframes>
+        <body>Your browser does not support frames. Welcome to My Website</body>
+    </noframes>
+</frameset>
+</html>
