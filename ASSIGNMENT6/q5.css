@@ -1,0 +1,13 @@
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial;background:#f7f9fb;padding:2rem}
+.pricing{display:flex;gap:1rem;max-width:1100px;margin:0 auto;align-items:flex-start;justify-content:center}
+.card{flex:1;background:#fff;padding:1.5rem;border-radius:8px;text-align:center;transition:transform .3s,box-shadow .3s;min-height:220px}
+.card:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(0,0,0,0.12)}
+.featured{transform:scale(1.05);background:#fff7e6;border:2px solid #ffd18a}
+
+/* Simple fade-in animation */
+@keyframes fadeInUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.pricing .card{animation:fadeInUp .6s ease both}
+
+/* Stack vertically below 750px */
+@media (max-width:750px){.pricing{flex-direction:column;padding:1rem}}

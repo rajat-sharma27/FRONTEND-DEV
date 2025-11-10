@@ -1,0 +1,11 @@
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial;background:#f7f9fb;padding:2rem}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;align-items:start}
+.card{background:#fff;padding:1rem;border-radius:8px;box-shadow:0 8px 18px rgba(0,0,0,0.06);display:flex;flex-direction:column;justify-content:space-between;min-height:140px;transition:transform .3s}
+.card:hover{transform:scale(1.05)}
+.price{font-weight:700;margin-top:0.5rem}
+
+/* Tablet: 2 columns */
+@media (max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
+/* Mobile: 1 column */
+@media (max-width:600px){.gallery{grid-template-columns:1fr}}
