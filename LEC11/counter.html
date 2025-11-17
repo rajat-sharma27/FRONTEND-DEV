@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<body>
+    <div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <h1>Counter</h1>
+        
+        <div id="value" style="font-size: 24px; margin-top: 10px;">0</div>
+        <img src="https://cdn-icons-png.flaticon.com/512/992/992700.png" alt="Counter Image" style="width: 100px; height: 100px; margin-top: 10px;" class="counter-image">
+        <div style="margin-top: 20px;">
+            <button id="decrement">-</button>
+            <button id="plusTwo">+2</button>
+            <button id="increment">+</button>
+        </div>
+    </div>
+    <script>
+        let count = 0;
+
+        const valueEl = document.getElementById('value');
+        const incrementBtn = document.getElementById('increment');
+        const decrementBtn = document.getElementById('decrement');
+        const plusTwoBtn = document.getElementById('plusTwo');
+
+        const counterImage = document.querySelector('.counter-image');
+
+        incrementBtn.addEventListener('click', () => {
+            count++;
+            valueEl.textContent = count;
+        });
+
+        plusTwoBtn.addEventListener('click', () => {
+            count += 2;
+            valueEl.textContent = count;
+        });
+
+        decrementBtn.addEventListener('click', () => {
+            if(count <= 0) return;
+            count--;
+            valueEl.textContent = count;
+        });
+
+        
+    </script>
+</body>
+</html>
