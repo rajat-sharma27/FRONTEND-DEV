@@ -1,0 +1,23 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Q3 - Multi Step Form</title>
+<style>
+  .step { display:none; }
+  .step.active { display:block; }
+  .error { color: red; font-size: 0.9em; }
+</style></head><body>
+<h2>Q3 - Multi-step Form</h2>
+<div id="step1" class="step active">
+  <label>Name: <input id="name" /></label><div id="errName" class="error"></div>
+  <button id="next1">Next</button>
+</div>
+<div id="step2" class="step">
+  <label>Email: <input id="email" /></label><div id="errEmail" class="error"></div>
+  <button id="back2">Back</button><button id="next2">Next</button>
+</div>
+<div id="step3" class="step">
+  <label>Password: <input id="password" type="password" /></label><div id="errPassword" class="error"></div>
+  <button id="back3">Back</button><button id="finish">Finish</button>
+</div>
+<div id="summary" style="display:none;"></div>
+<script src="Q3_multistep.js"></script>
+</body></html>
