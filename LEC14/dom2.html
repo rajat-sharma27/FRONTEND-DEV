@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            background-color: lightgray;
+            padding: 10px;
+        }
+        .para-box p {
+            font-size: 16px;
+            color: black;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+        .bggreen {
+            background-color: rgb(4, 42, 112);
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="box">
+        <h1>Document Object Model</h1>
+    </div>
+    <div class="para-box">
+        <p class="para">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p class="p"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet aspernatur vero, doloribus error dolor, perspiciatis, molestias officia earum ipsa numquam itaque quisquam porro repellat accusamus tempore hic exercitationem. Neque, tempora excepturi facilis dolore quis dicta earum, culpa rerum eum ratione eius voluptatem? Pariatur voluptas vitae voluptatibus, deserunt eligendi nam fuga.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>        
+    </div>
+    <button id="btn">Click Me</button>
+
+    <div class="container">
+
+    </div>
+
+    <!-- <script>
+        const box = document.querySelector('.box');
+        box.style.backgroundColor = 'lightgreen';
+        box.style.color = 'brown';
+        box.style.paddingLeft = '20px';
+        box.innerHTML = '<h1>Deepak Singh</h1>';
+
+        const paraBox = document.querySelector('.para-box');
+        const paragraphs = paraBox.querySelectorAll('p');
+        paragraphs.forEach(function(p){
+            p.style.fontSize = '30px';
+            p.style.color = 'blue';
+        });
+
+        const containerE1=document.querySelector('.container');
+        //create a new paragraph element
+        let pE1=document.createElement("p");
+        pE1.textContent="This is created paragraph";
+         pE1.style.color="brown";
+           pE1.classList.add("bggreen");
+        //append the paragraph element to the container
+        containerE1.appendChild(pE1);
+    </script> -->
+
+    <script>
+
+
+         $(".box").css({
+            color: "red"
+        })
+
+        $(".p").css({
+            fontSize: "20px",
+            color: "green"
+        });
+
+        $(".para").text("This is changed by jQuery");
+
+        $("#btn").click(function(){
+            alert("BOMB Implemented");
+        });
+    </script>
+
+       
+        </body>
+</html>
