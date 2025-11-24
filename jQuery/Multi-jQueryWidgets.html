@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Q9 - Multi-jQuery Widgets</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- Load jQuery version 1 (simulate older) -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <!-- Load jQuery version 2+ in noConflict mode -->
+  <script>
+    // Save the first jQuery into jq1
+    var jq1 = jQuery.noConflict(true);
+    // Inject second jQuery (modern) dynamically
+    (function() {
+      var s = document.createElement('script');
+      s.src = "https://code.jquery.com/jquery-3.6.0.min.js";
+      s.onload = function() {
+        // Save modern jQuery as jq2 and release $ to older version
+        window.jq2 = jQuery.noConflict(true);
+        // After both loaded we load Q9.js
+        var s2 = document.createElement('script');
+        s2.src = "Multi-jQueryWidgets.js";
+        document.head.appendChild(s2);
+      };
+      document.head.appendChild(s);
+    })();
+  </script>
+  <style>
+    .widget { display:inline-block; padding:12px; border:1px solid #ddd; margin:8px; cursor:pointer; }
+    .active { border-color:#ff5f87; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Dashboard Widgets</h1>
+    <div id="carousel" class="widget">Carousel (v1)</div>
+    <div id="modal-trigger" class="widget">Open Notification (v2)</div>
+    <div id="widget-a" class="widget">Widget A (v1)</div>
+    <div id="widget-b" class="widget">Widget B (v2)</div>
+
+    <!-- modal placeholder -->
+    <div id="modal" style="display:none; position:fixed; left:20%; top:30%; background:#fff; border:1px solid #ddd; padding:20px;">
+      <p>Notification Modal</p>
+      <button id="close-modal">Close</button>
+    </div>
+  </main>
+</body>
+</html>

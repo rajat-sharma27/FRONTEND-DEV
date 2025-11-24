@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Q3 - Interactive FAQ</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="InteractiveFAQ.js" defer></script>
+  <style>
+    .faq { max-width:800px; margin:0 auto; }
+    .question { padding:10px; border-bottom:1px solid #ddd; cursor:pointer; }
+    .answer { display:none; padding:8px 12px; background:#f9f9f9; }
+    .focused { background:#eef; }
+  </style>
+</head>
+<body>
+  <main class="faq">
+    <h1>FAQ</h1>
+
+    <div class="qa">
+      <div class="question" tabindex="0">Q1: What is your refund policy?</div>
+      <div class="answer">We offer refunds within 14 days...</div>
+    </div>
+
+    <div class="qa">
+      <div class="question" tabindex="0">Q2: How do I change my password?</div>
+      <div class="answer">Go to account settings → change password.</div>
+    </div>
+
+    <div class="qa">
+      <div class="question" tabindex="0">Q3: How to contact support?</div>
+      <div class="answer">Email support@domain.com or call 1800-XXX.</div>
+    </div>
+
+    <div class="qa">
+      <div class="question" tabindex="0">Q4: Do you offer student discounts?</div>
+      <div class="answer">Yes — verify student ID at checkout.</div>
+    </div>
+
+    <div class="qa">
+      <div class="question" tabindex="0">Q5: How to cancel subscription?</div>
+      <div class="answer">Visit subscriptions page and choose cancel.</div>
+    </div>
+
+    <!-- an input to demonstrate focus/blur behavior -->
+    <div class="qa">
+      <div class="question" tabindex="0">Q6: Submit a question</div>
+      <div class="answer">
+        <input id="qa-input" placeholder="Type your question here">
+      </div>
+    </div>
+  </main>
+</body>
+</html>

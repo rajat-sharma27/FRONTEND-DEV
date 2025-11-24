@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Q5 - Team Directory</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="TeamMembersDirectory.js" defer></script>
+  <style>
+    .team { max-width:900px; margin:0 auto; }
+    .manager { background:#eef; padding:10px; margin:6px; cursor:pointer; }
+    .employee { padding:6px 8px; border-left:3px solid #ddd; margin:4px 0; }
+    .contact { display:none; font-size:0.9em; color:#333; }
+    .highlight { background:#fffae6; }
+  </style>
+</head>
+<body>
+  <main class="team">
+    <h1>Team Directory</h1>
+
+    <section class="department" data-dept="Engineering">
+      <h2 class="dept-title">Engineering</h2>
+      <div class="manager" data-id="m1">Manager: Priya</div>
+      <div class="reports">
+        <div class="employee" data-manager="m1">Arjun <span class="contact">arjun@co.com</span></div>
+        <div class="employee" data-manager="m1">Neha <span class="contact">neha@co.com</span></div>
+        <div class="employee" data-manager="m1">Karan <span class="contact">karan@co.com</span></div>
+      </div>
+    </section>
+
+    <section class="department" data-dept="Design">
+      <h2 class="dept-title">Design</h2>
+      <div class="manager" data-id="m2">Manager: Suman</div>
+      <div class="reports">
+        <div class="employee" data-manager="m2">Rhea <span class="contact">rhea@co.com</span></div>
+        <div class="employee" data-manager="m2">Vikram <span class="contact">vikram@co.com</span></div>
+        <div class="employee" data-manager="m2">Maya <span class="contact">maya@co.com</span></div>
+      </div>
+    </section>
+
+    <div style="margin-top:12px;">
+      <button id="random-employee">Select Random Employee</button>
+      <button id="toggle-team">Collapse/Expand Team</button>
+    </div>
+  </main>
+</body>
+</html>

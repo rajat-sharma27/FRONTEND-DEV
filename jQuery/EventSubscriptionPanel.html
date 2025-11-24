@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Q6 - Subscription Panel</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="EventSubscriptionPanel.js" defer></script>
+  <style>
+    .topic { border:1px solid #ddd; padding:8px; margin:6px; }
+    .subscribed { background:#e6ffef; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Subscriptions</h1>
+    <div id="topics">
+      <div class="topic">News <button class="subscribe">Subscribe</button> <button class="unsubscribe">Unsubscribe</button></div>
+      <div class="topic">Offers <button class="subscribe">Subscribe</button> <button class="unsubscribe">Unsubscribe</button></div>
+      <div class="topic">Events <button class="subscribe">Subscribe</button> <button class="unsubscribe">Unsubscribe</button></div>
+      <div class="topic">Updates <button class="subscribe">Subscribe</button> <button class="unsubscribe">Unsubscribe</button></div>
+      <div class="topic">Blog <button class="subscribe">Subscribe</button> <button class="unsubscribe">Unsubscribe</button></div>
+    </div>
+
+    <div style="margin-top:10px;">
+      <input id="new-topic" placeholder="New topic name">
+      <button id="add-topic">Add Topic</button>
+    </div>
+
+    <div id="messages" aria-live="polite" style="margin-top:12px;"></div>
+  </main>
+</body>
+</html>

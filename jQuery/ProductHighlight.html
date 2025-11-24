@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Q2 - Product Highlight</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="ProductHighlight.js" defer></script>
+  <style>
+    .product { padding:10px; border:1px solid #ddd; display:inline-block; width:160px; margin:8px; vertical-align:top; }
+    .highlight { background: #fffae6; border-color:#f5c042; }
+    .selected { outline: 3px solid #ff5f87; }
+    .details { display:none; font-size:0.9em; color:#444; }
+    .discount { font-weight:bold; color:green; }
+    .out { color:red; font-weight:bold; }
+  </style>
+</head>
+<body>
+  <header><h1>Products</h1></header>
+  <main>
+    <section id="products" aria-label="Product list">
+      <article class="product" data-id="p1" data-stock="10" data-discount="10" data-name="Pizza">
+        <h2 class="title">Pizza</h2>
+        <p class="price">₹300</p>
+        <p class="details">Tasty cheese pizza, 12 inch.</p>
+        <button class="fav">♡ Favorite</button>
+      </article>
+
+      <article class="product" data-id="p2" data-stock="0" data-discount="0" data-name="Burger">
+        <h2 class="title">Burger</h2>
+        <p class="price">₹150</p>
+        <p class="details">Juicy beef burger.</p>
+        <button class="fav">♡ Favorite</button>
+      </article>
+
+      <article class="product" data-id="p3" data-stock="5" data-discount="20" data-name="Fries">
+        <h2 class="title">Fries</h2>
+        <p class="price">₹100 <span class="discount">20% off</span></p>
+        <p class="details">Crispy potato fries.</p>
+        <button class="fav">♡ Favorite</button>
+      </article>
+
+      <article class="product" data-id="p4" data-stock="3" data-discount="0" data-name="Coke">
+        <h2 class="title">Coke</h2>
+        <p class="price">₹50</p>
+        <p class="details">Chilled drink 500ml.</p>
+        <button class="fav">♡ Favorite</button>
+      </article>
+
+      <article class="product" data-id="p5" data-stock="12" data-discount="5" data-name="Salad">
+        <h2 class="title">Salad</h2>
+        <p class="price">₹120 <span class="discount">5% off</span></p>
+        <p class="details">Fresh garden salad.</p>
+        <button class="fav">♡ Favorite</button>
+      </article>
+    </section>
+  </main>
+  <footer>Q2 example</footer>
+</body>
+</html>
