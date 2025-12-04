@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Q1 - Live Search</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body{font-family:system-ui,Arial;margin:20px}
+    .result{display:flex;gap:12px;padding:8px;border-bottom:1px solid #eee;align-items:center}
+    img{width:64px;height:64px;object-fit:cover}
+    #loading{display:none;margin:8px 0}
+    .none{color:#888;margin-top:8px}
+  </style>
+</head>
+<body>
+  <h2>Live Product Search (Q1)</h2>
+  <input id="search" placeholder="Type to search products..." autocomplete="off" style="width:320px;padding:8px">
+  <div id="loading">Searching...</div>
+  <div id="results"></div>
+
+<script>
+$(function(){
+  let req = null;
+  $('#search').on('input', function(){
+    const q = $(this).val().trim();
+    $('#results').empty();
+    if(q.length === 0) return;
+    $('#loading').show();
+    if(req) req.abort();
+    req = $.ajax({
+      url: 'http://localhost:3001/products',
+      data: { q: q },
+      method: 'GET',
+      success(data){
+        $('#loading').hide();
+        if(!data.length){
+          $('#results').html('<div class="none">No products found</div>');
+          return;
+        }
+        data.forEach(p => {
+          const el = $('<div class="result">')
+            .append($('<img>').attr('src', p.image))
+            .append($('<div>').html('<strong>'+p.name+'</strong><br>₹'+p.price));
+          $('#results').append(el);
+        });
+      },
+      error(){
+        $('#loading').hide();
+        $('#results').html('<div class="none">Error loading products</div>');
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>

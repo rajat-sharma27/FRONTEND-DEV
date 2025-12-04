@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Q5 - Timetable Viewer</title>
+  <style>body{font-family:system-ui,Arial;margin:20px}table{border-collapse:collapse;width:100%}td,th{padding:8px;border:1px solid #ddd}</style>
+</head>
+<body>
+  <h2>College Timetable Viewer (Q5)</h2>
+  <label>Day: <select id="day">
+    <option>Monday</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option><option>Friday</option>
+  </select></label>
+  <div id="out" style="margin-top:12px"></div>
+<script>
+function loadDay(){
+  const day = document.getElementById('day').value;
+  document.getElementById('out').textContent = 'Loading...';
+  fetch('http://localhost:3007/timetable?day='+encodeURIComponent(day))
+    .then(r=>r.json())
+    .then(data=>{
+      if(!data.length) return document.getElementById('out').textContent = 'No classes today.';
+      const tbl = document.createElement('table');
+      const head = document.createElement('tr');
+      head.innerHTML = '<th>Subject</th><th>Faculty</th><th>Time</th>';
+      tbl.appendChild(head);
+      data.forEach(c=>{
+        const tr = document.createElement('tr');
+        tr.innerHTML = '<td>'+c.subject+'</td><td>'+c.faculty+'</td><td>'+c.time+'</td>';
+        tbl.appendChild(tr);
+      });
+      const out = document.getElementById('out');
+      out.innerHTML = '';
+      out.appendChild(tbl);
+    }).catch(()=>{ document.getElementById('out').textContent = 'Failed to load timetable.' });
+}
+document.getElementById('day').addEventListener('change', loadDay);
+loadDay();
+</script>
+</body>
+</html>

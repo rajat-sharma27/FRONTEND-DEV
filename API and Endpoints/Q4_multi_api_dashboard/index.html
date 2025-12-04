@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Q4 - Multi-API Dashboard</title>
+  <style>body{font-family:system-ui,Arial;margin:20px}.card{padding:16px;border:1px solid #eee;border-radius:8px;width:180px;margin-right:12px;display:inline-block;vertical-align:top}</style>
+</head>
+<body>
+  <h2>Multi-API Dashboard (Q4)</h2>
+  <div id="warning" style="color:orange"></div>
+  <div id="cards">
+    <div class="card" id="users">Users<br><div class="val">—</div></div>
+    <div class="card" id="orders">Orders<br><div class="val">—</div></div>
+    <div class="card" id="products">Products<br><div class="val">—</div></div>
+  </div>
+<script>
+const urls = [
+  'http://localhost:3004/users',
+  'http://localhost:3005/orders',
+  'http://localhost:3006/products'
+];
+const skeleton = function(el){ document.querySelector(el+' .val').textContent = 'Loading...'; }
+skeleton('#users'); skeleton('#orders'); skeleton('#products');
+Promise.all(urls.map(u => fetch(u).then(r => r.ok ? r.json() : Promise.reject(u))))
+  .then(([u,o,p])=>{
+    document.querySelector('#users .val').textContent = u.length;
+    document.querySelector('#orders .val').textContent = o.length;
+    document.querySelector('#products .val').textContent = p.length;
+  }).catch(err=>{
+    // attempt to show what loaded where possible
+    document.getElementById('warning').textContent = 'Some data could not be loaded.';
+    // try individually
+    fetch(urls[0]).then(r=>r.json()).then(d=>document.querySelector('#users .val').textContent = d.length).catch(()=>{});
+    fetch(urls[1]).then(r=>r.json()).then(d=>document.querySelector('#orders .val').textContent = d.length).catch(()=>{});
+    fetch(urls[2]).then(r=>r.json()).then(d=>document.querySelector('#products .val').textContent = d.length).catch(()=>{});
+  });
+</script>
+</body>
+</html>

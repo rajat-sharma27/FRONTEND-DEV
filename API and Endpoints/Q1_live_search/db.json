@@ -1,0 +1,34 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Wireless Mouse",
+      "price": 499,
+      "image": "https://via.placeholder.com/80?text=Mouse"
+    },
+    {
+      "id": 2,
+      "name": "USB-C Charger",
+      "price": 899,
+      "image": "https://via.placeholder.com/80?text=Charger"
+    },
+    {
+      "id": 3,
+      "name": "Gaming Keyboard",
+      "price": 2499,
+      "image": "https://via.placeholder.com/80?text=Keyboard"
+    },
+    {
+      "id": 4,
+      "name": "Laptop Stand",
+      "price": 1299,
+      "image": "https://via.placeholder.com/80?text=Stand"
+    },
+    {
+      "id": 5,
+      "name": "Noise Cancelling Headphones",
+      "price": 4999,
+      "image": "https://via.placeholder.com/80?text=Headphones"
+    }
+  ]
+}

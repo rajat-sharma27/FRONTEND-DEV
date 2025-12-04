@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Q3 - Task Manager</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>body{font-family:system-ui,Arial;margin:20px}li{padding:8px;border-bottom:1px solid #eee}</style>
+</head>
+<body>
+  <h2>Task Manager (Q3)</h2>
+  <label>Filter: <select id="filter">
+    <option value="">All</option>
+    <option value="low">Low Priority</option>
+    <option value="medium">Medium Priority</option>
+    <option value="high">High Priority</option>
+    <option value="completed">Completed</option>
+  </select></label>
+  <ul id="list"></ul>
+
+<script>
+function loadTasks(){
+  const f = $('#filter').val();
+  let params = {};
+  if(f === 'completed'){
+    params.completed = true;
+  } else if(f){
+    params.priority = f;
+  }
+  $('#list').html('Loading...');
+  $.ajax({
+    url: 'http://localhost:3003/tasks',
+    data: params,
+    success(data){
+      $('#list').empty();
+      data.forEach(task => {
+        const li = $('<li>');
+        const chk = $('<input type="checkbox">').prop('checked', task.completed);
+        chk.on('change', function(){
+          const newCompleted = this.checked;
+          $.ajax({
+            url: 'http://localhost:3003/tasks/'+task.id,
+            method: 'PATCH',
+            contentType: 'application/json',
+            data: JSON.stringify({completed: newCompleted}),
+            success(){ task.completed = newCompleted },
+            error(){ alert('Failed to update task'); chk.prop('checked', !newCompleted) }
+          });
+        });
+        li.append(chk).append(' <strong>'+task.title+'</strong> ('+task.priority+')');
+        $('#list').append(li);
+      });
+      if(data.length===0) $('#list').html('<li>No tasks found</li>');
+    },
+    error(){ $('#list').html('<li>Error loading tasks</li>'); }
+  });
+}
+$('#filter').on('change', loadTasks);
+loadTasks();
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Q2 - Employee Dashboard</title>
+  <style>
+    body{font-family:system-ui,Arial;margin:20px}
+    table{border-collapse:collapse;width:100%}
+    td,th{padding:8px;border:1px solid #ddd;text-align:left}
+    .toggle{cursor:pointer;padding:6px 10px;border-radius:16px;border:1px solid #ccc;display:inline-block}
+  </style>
+</head>
+<body>
+  <h2>Employee Status Dashboard (Q2)</h2>
+  <div id="error" style="color:red"></div>
+  <table id="tbl">
+    <thead><tr><th>ID</th><th>Name</th><th>Status</th><th>Action</th></tr></thead>
+    <tbody></tbody>
+  </table>
+
+<script>
+function fetchEmployees(){
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET','http://localhost:3002/employees', true);
+  xhr.onload = function(){
+    if(xhr.status>=200 && xhr.status<300){
+      const data = JSON.parse(xhr.responseText);
+      const tbody = document.querySelector('#tbl tbody');
+      tbody.innerHTML = '';
+      data.forEach(emp => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = '<td>'+emp.id+'</td><td>'+emp.name+'</td><td class="status">'+emp.status+'</td><td></td>';
+        const btn = document.createElement('button');
+        btn.className = 'toggle';
+        btn.textContent = emp.status === 'active' ? 'Set Inactive' : 'Set Active';
+        btn.onclick = function(){
+          const prev = emp.status;
+          const newStatus = prev === 'active' ? 'inactive' : 'active';
+          // optimistic UI update
+          tr.querySelector('.status').textContent = newStatus;
+          btn.textContent = newStatus === 'active' ? 'Set Inactive' : 'Set Active';
+          // send PATCH
+          const patchXhr = new XMLHttpRequest();
+          patchXhr.open('PATCH','http://localhost:3002/employees/'+emp.id, true);
+          patchXhr.setRequestHeader('Content-Type','application/json;charset=UTF-8');
+          patchXhr.onload = function(){
+            if(!(patchXhr.status>=200 && patchXhr.status<300)){
+              // revert UI
+              tr.querySelector('.status').textContent = prev;
+              btn.textContent = prev === 'active' ? 'Set Inactive' : 'Set Active';
+              document.getElementById('error').textContent = 'Failed to update status for '+emp.name;
+            } else {
+              emp.status = newStatus;
+              document.getElementById('error').textContent = '';
+            }
+          };
+          patchXhr.onerror = function(){
+            tr.querySelector('.status').textContent = prev;
+            btn.textContent = prev === 'active' ? 'Set Inactive' : 'Set Active';
+            document.getElementById('error').textContent = 'Network error';
+          };
+          patchXhr.send(JSON.stringify({status: newStatus}));
+        };
+        tr.querySelector('td:last-child').appendChild(btn);
+        tbody.appendChild(tr);
+      });
+    } else {
+      document.getElementById('error').textContent = 'Failed to load employees';
+    }
+  };
+  xhr.onerror = function(){ document.getElementById('error').textContent = 'Network error'; };
+  xhr.send();
+}
+fetchEmployees();
+</script>
+</body>
+</html>
